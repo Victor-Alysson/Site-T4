@@ -1,0 +1,171 @@
+/* Reset básico para remover margens padrão do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    /* Fundo azul ardósia moderno inspirado no seu rascunho */
+    background-color: #5C7A99; 
+    color: #F8F9FA;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    z-index: -2; 
+}
+
+/* --- Cabeçalho --- */
+.cabecalho {
+    background-image: linear-gradient(35deg, #A37C62 0%, #8B5E3C 100%); 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 1.2rem 2rem;
+    position: relative; /* Adicionado para permitir o z-index */
+    z-index: 10;        /* Coloca o cabeçalho na camada mais alta, sempre por cima */
+}
+
+.cabecalho-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.logo-e-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.logo {
+    font-size: 2.8rem;
+    font-weight: 800; /* Deixa a fonte bem mais grossa e imponente */
+    color: #1A1A1A;
+    text-decoration: none; /* Remove o sublinhado feio do link */
+    text-transform: uppercase; /* Deixa tudo em maiúsculo para dar cara de brasão/logo */
+    letter-spacing: 2px; /* Dá um respiro elegante entre as letras */
+    font-family: 'Arial Black', 'Segoe UI', Impact, sans-serif; /* Fonte com mais peso */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra sutil para destacar do fundo marrom */
+    transition: all 0.3s ease;
+}
+
+/* Efeito ao passar o mouse por cima do logo */
+.logo:hover {
+    color: #000000; /* Fica branco/claro ao passar o mouse */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* --- Navegação --- */
+.navegacao ul {
+    list-style: none;
+    display: flex;
+    gap: 0.8rem;
+}
+
+.navegacao a {
+    text-decoration: none;
+    color: #1A1A1A;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+    border: 2px solid #1A1A1A; /* Borda similar à do seu desenho */
+    border-radius: 4px;
+    background-color: transparent;
+    transition: all 0.2s ease-in-out;
+}
+
+.navegacao a:hover {
+    background-color: #1A1A1A;
+    color: #A37C62;
+}
+
+/* --- Botão de Login --- */
+.btn-login {
+    text-decoration: none;
+    color: #1A1A1A;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 0.6rem 1.5rem;
+    border: 2px solid #1A1A1A;
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-login:hover {
+    background-color: #1A1A1A;
+    color: #A37C62;
+}
+
+/* --- Conteúdo Central (Hero Section) --- */
+.conteudo-principal {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.mensagem-central h2 {
+    font-size: 3.5rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    color: #1A1A1A; /* Cor escura para contrastar com o fundo azul */
+}
+
+.mensagem-central p {
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: #1A1A1A;
+}
+
+.conteudo-principal::before {
+    content: ""; /* Obrigatório para pseudo-elementos */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* 👇 COLOQUE O CAMINHO DA SUA IMAGEM AQUI 👇 */
+    background-image: url('../assets/index/background-image.jpg'); 
+    
+    /* Configurações para a imagem preencher tudo sem distorcer */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* 👇 CONTROLE DE TRANSPARÊNCIA AQUI 👇 */
+    /* 0.2 = 20% de opacidade (bem sutil). Aumente para 0.5 se quiser mais visível */
+    opacity: 0.2; 
+    
+    z-index: 0; /* Fica atrás do texto */
+}
+
+/* --- Responsividade para Celulares --- */
+@media (max-width: 768px) {
+    .cabecalho-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .logo-e-nav {
+        align-items: center;
+    }
+
+    .navegacao ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .mensagem-central h2 {
+        font-size: 2.5rem;
+    }
+
+    .mensagem-central p {
+        font-size: 1.8rem;
+    }
+}
