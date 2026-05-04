@@ -1,0 +1,144 @@
+/* Variáveis Principais */
+:root {
+    --ita-blue: #003366;
+    --ita-gold: #FFB81C;
+    --bg-color: #f4f4f9;
+    --text-color: #333;
+}
+
+/* Cores das Matérias (Baseado na imagem) */
+.bg-ces { background-color: #7bb3e8; color: #000; }
+.bg-qui { background-color: #faea6b; color: #000; }
+.bg-mat15 { background-color: #b081c2; color: #000; }
+.bg-mtp { background-color: #f59e42; color: #000; }
+.bg-mat17 { background-color: #eba2a2; color: #000; }
+.bg-fnd { background-color: #8df2eb; color: #000; }
+.bg-cpor { background-color: #8fb5a8; color: #000; font-weight: bold;}
+.bg-hum { background-color: #9cf26b; color: #000; }
+.bg-mat13 { background-color: #f593c6; color: #000; }
+
+/* Resets básicos */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Cabeçalho */
+header {
+    background-color: var(--ita-blue);
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.logo-container { display: flex; align-items: center; gap: 15px; }
+.logo-container img { height: 60px; background-color: white; padding: 5px; border-radius: 8px; }
+h1 { margin: 0; font-size: 24px; color: var(--ita-gold); letter-spacing: 1px; }
+nav { display: flex; gap: 10px; }
+nav a { text-decoration: none; color: white; background-color: rgba(255, 255, 255, 0.1); padding: 10px 20px; border-radius: 5px; font-weight: 600;}
+nav a.active { background-color: var(--ita-gold); color: var(--ita-blue); }
+
+/* Conteúdo */
+main { padding: 40px 20px; max-width: 1200px; margin: 0 auto; }
+h2 { color: var(--ita-blue); border-bottom: 3px solid var(--ita-gold); padding-bottom: 10px; margin-top: 40px;}
+h2:first-child { margin-top: 0; }
+
+/* Estilos da Tabela */
+.table-container {
+    overflow-x: auto;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 900px;
+    border: 2px solid #000;
+}
+
+th, td {
+    border: 1px solid #333;
+    text-align: center;
+    padding: 0;
+    height: 35px;
+}
+
+th {
+    background-color: #d9d9d9;
+    color: #000;
+    font-size: 1em;
+    padding: 8px;
+}
+
+.horario-col {
+    background-color: #fff;
+    font-weight: bold;
+    width: 80px;
+    padding: 8px;
+}
+
+/* Divisor entre Matéria e Sala */
+.aula-info {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: stretch;
+}
+
+.materia {
+    flex: 1;
+    padding: 8px 4px;
+    font-weight: bold;
+    font-size: 0.9em;
+    border-right: 1px solid rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sala {
+    flex: 1;
+    padding: 8px 4px;
+    font-size: 0.85em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cpor-cell {
+    padding: 15px;
+    font-size: 1.1em;
+    letter-spacing: 1px;
+}
+
+/* Borda preta grossa separando a manhã da tarde */
+tr.manha-fim td {
+    border-bottom: 4px solid #000;
+}
+
+/* Tabela de Professores */
+/* Tabela de Professores */
+.tabela-professores { 
+    background: transparent; 
+    box-shadow: none; 
+}
+
+.tabela-professores table {
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.tabela-professores th { background-color: #d9d9d9; }
+.tabela-professores td { padding: 8px; font-size: 0.95em; }
+.color-box { width: 20px; height: 20px; display: inline-block; border: 1px solid #000; vertical-align: middle; }
+
+footer { text-align: center; padding: 20px; background-color: var(--ita-blue); color: white; margin-top: 40px; }
