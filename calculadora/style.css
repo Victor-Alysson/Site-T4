@@ -1,0 +1,411 @@
+/* =========================================
+   ESTILOS DA PÁGINA PRINCIPAL E GERAIS
+   (Do seu arquivo anexo)
+   ========================================= */
+
+/* Reset básico para remover margens padrão do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    /* Fundo azul ardósia moderno inspirado no seu rascunho */
+    background-color: #5C7A99; 
+    color: #F8F9FA;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    z-index: -2; 
+}
+
+/* --- Cabeçalho --- */
+.cabecalho {
+    background-image: linear-gradient(35deg, #A37C62 0%, #8B5E3C 100%); 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 1.2rem 2rem;
+    position: relative; /* Adicionado para permitir o z-index */
+    z-index: 10;        /* Coloca o cabeçalho na camada mais alta, sempre por cima */
+}
+
+.cabecalho-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.logo-e-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.logo {
+    font-size: 2.8rem;
+    font-weight: 800; /* Deixa a fonte bem mais grossa e imponente */
+    color: #1A1A1A;
+    text-decoration: none; /* Remove o sublinhado feio do link */
+    text-transform: uppercase; /* Deixa tudo em maiúsculo para dar cara de brasão/logo */
+    letter-spacing: 2px; /* Dá um respiro elegante entre as letras */
+    font-family: 'Arial Black', 'Segoe UI', Impact, sans-serif; /* Fonte com mais peso */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra sutil para destacar do fundo marrom */
+    transition: all 0.3s ease;
+}
+
+/* Efeito ao passar o mouse por cima do logo */
+.logo:hover {
+    color: #000000; /* Fica branco/claro ao passar o mouse */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* --- Navegação --- */
+.navegacao ul {
+    list-style: none;
+    display: flex;
+    gap: 0.8rem;
+}
+
+.navegacao a {
+    text-decoration: none;
+    color: #1A1A1A;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+    border: 2px solid #1A1A1A; /* Borda similar à do seu desenho */
+    border-radius: 4px;
+    background-color: transparent;
+    transition: all 0.2s ease-in-out;
+}
+
+.navegacao a:hover {
+    background-color: #1A1A1A;
+    color: #A37C62;
+}
+
+/* --- Botão de Login --- */
+.btn-login {
+    text-decoration: none;
+    color: #1A1A1A;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 0.6rem 1.5rem;
+    border: 2px solid #1A1A1A;
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-login:hover {
+    background-color: #1A1A1A;
+    color: #A37C62;
+}
+
+/* --- Conteúdo Central (Hero Section) --- */
+.conteudo-principal {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.mensagem-central h2 {
+    font-size: 3.5rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    color: #1A1A1A; /* Cor escura para contrastar com o fundo azul */
+}
+
+.mensagem-central p {
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: #1A1A1A;
+}
+
+/* Efeito transparente para a INDEX apenas */
+.conteudo-principal::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../assets/index/background-image.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.2; 
+    z-index: -1; 
+}
+
+/* --- Responsividade para Celulares --- */
+@media (max-width: 768px) {
+    .cabecalho-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .logo-e-nav {
+        align-items: center;
+    }
+
+    .navegacao ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .mensagem-central h2 {
+        font-size: 2.5rem;
+    }
+
+    .mensagem-central p {
+        font-size: 1.8rem;
+    }
+}
+
+/* =========================================
+   ESTILOS ESPECÍFICOS DA PÁGINA DE HORÁRIOS
+   ========================================= */
+
+.conteudo-horarios {
+    flex: 1; 
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.conteudo-horarios h2 {
+    color: #F8F9FA;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    margin-top: 40px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    border-bottom: 3px solid #8B5E3C; /* Usando o marrom do tema */
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.conteudo-horarios h2:first-child {
+    margin-top: 0;
+}
+
+/* Cores das Matérias (Baseado na imagem - intocadas) */
+.bg-ces { background-color: #7bb3e8; color: #000; }
+.bg-qui { background-color: #faea6b; color: #000; }
+.bg-mat15 { background-color: #b081c2; color: #000; }
+.bg-mtp { background-color: #f59e42; color: #000; }
+.bg-mat17 { background-color: #eba2a2; color: #000; }
+.bg-fnd { background-color: #8df2eb; color: #000; }
+.bg-cpor { background-color: #8fb5a8; color: #000; font-weight: bold;}
+.bg-hum { background-color: #9cf26b; color: #000; }
+.bg-mat13 { background-color: #f593c6; color: #000; }
+
+/* Estilos da Tabela */
+.table-container {
+    overflow-x: auto;
+    background: transparent;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15); /* Sombra suave para destacar do azul */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 900px;
+    border: 2px solid #1A1A1A;
+    background-color: #ffffff; /* Garante que os espaços vazios fiquem brancos */
+}
+
+th, td {
+    border: 1px solid #1A1A1A; /* Borda um pouco mais forte pra contrastar */
+    text-align: center;
+    padding: 0;
+    height: 35px;
+}
+
+th {
+    background-color: #A37C62; /* Cabeçalho marrom combinando com o menu */
+    color: #ffffff;
+    font-size: 1em;
+    padding: 10px;
+    border: 1px solid #1A1A1A;
+}
+
+.horario-col {
+    background-color: #E2E8F0; /* Cor clarinha para a coluna dos horários */
+    font-weight: bold;
+    width: 80px;
+    padding: 8px;
+    color: #1A1A1A;
+}
+
+/* Divisor entre Matéria e Sala */
+.aula-info {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: stretch;
+}
+
+.materia {
+    flex: 1;
+    padding: 8px 4px;
+    font-weight: bold;
+    font-size: 0.9em;
+    border-right: 1px solid rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sala {
+    flex: 1;
+    padding: 8px 4px;
+    font-size: 0.85em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cpor-cell {
+    padding: 15px;
+    font-size: 1.1em;
+    letter-spacing: 1px;
+}
+
+tr.manha-fim td {
+    border-bottom: 4px solid #1A1A1A;
+}
+
+/* Tabela de Professores */
+.tabela-professores { 
+    background: transparent; 
+    box-shadow: none; 
+}
+
+.tabela-professores table {
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.tabela-professores th { background-color: #A37C62; color: #ffffff; }
+.tabela-professores td { padding: 8px; font-size: 0.95em; color: #1A1A1A;}
+.color-box { width: 20px; height: 20px; display: inline-block; border: 1px solid #1A1A1A; vertical-align: middle; }
+
+/* --- Estilos da Calculadora de Faltas --- */
+.conteudo-principal-faltas {
+    flex: 1;
+    padding: 40px 20px;
+    max-width: 600px; /* Mais estreito para a calculadora ficar centralizada e elegante */
+    margin: 0 auto;
+    width: 100%;
+}
+
+.conteudo-principal-faltas h2 {
+    color: #F8F9FA;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #8B5E3C;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.form-container {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 8px;
+    border: 2px solid #A37C62;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #F8F9FA;
+    font-size: 1.1rem;
+}
+
+.input-group input, .input-group select {
+    padding: 12px;
+    border-radius: 4px;
+    border: 1px solid #1A1A1A;
+    font-size: 1.1rem;
+    background-color: #F8F9FA;
+}
+
+.input-group input:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* Painel de Resultados */
+.resultado-container {
+    background-color: #F8F9FA;
+    border-radius: 8px;
+    padding: 20px;
+    color: #1A1A1A;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.oculto {
+    display: none;
+}
+
+.info-geral {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.status-box {
+    padding: 15px;
+    border-radius: 6px;
+    text-align: center;
+    border: 2px solid transparent;
+}
+
+.status-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.status-box p {
+    font-size: 1rem;
+    font-style: italic;
+}
+
+/* Cores Dinâmicas do Status */
+.status-verde {
+    background-color: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+}
+
+.status-amarelo {
+    background-color: #fff3cd;
+    color: #856404;
+    border-color: #ffeeba;
+}
+
+.status-vermelho {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-color: #f5c6cb;
+}
