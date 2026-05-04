@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horários | T4 - T30 ITA</title>
+    <style>
+        /* Variáveis Principais */
+        :root {
+            --ita-blue: #003366;
+            --ita-gold: #FFB81C;
+            --bg-color: #f4f4f9;
+            --text-color: #333;
+        }
+
+        /* Cores das Matérias (Baseado na imagem) */
+        .bg-ces { background-color: #7bb3e8; color: #000; }
+        .bg-qui { background-color: #faea6b; color: #000; }
+        .bg-mat15 { background-color: #b081c2; color: #000; }
+        .bg-mtp { background-color: #f59e42; color: #000; }
+        .bg-mat17 { background-color: #eba2a2; color: #000; }
+        .bg-fnd { background-color: #8df2eb; color: #000; }
+        .bg-cpor { background-color: #8fb5a8; color: #000; font-weight: bold;}
+        .bg-hum { background-color: #9cf26b; color: #000; }
+        .bg-mat13 { background-color: #f593c6; color: #000; }
+
+        /* Resets básicos */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        /* Cabeçalho */
+        header {
+            background-color: var(--ita-blue);
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .logo-container { display: flex; align-items: center; gap: 15px; }
+        .logo-container img { height: 60px; background-color: white; padding: 5px; border-radius: 8px; }
+        h1 { margin: 0; font-size: 24px; color: var(--ita-gold); letter-spacing: 1px; }
+        nav { display: flex; gap: 10px; }
+        nav a { text-decoration: none; color: white; background-color: rgba(255, 255, 255, 0.1); padding: 10px 20px; border-radius: 5px; font-weight: 600;}
+        nav a.active { background-color: var(--ita-gold); color: var(--ita-blue); }
+
+        /* Conteúdo */
+        main { padding: 40px 20px; max-width: 1200px; margin: 0 auto; }
+        h2 { color: var(--ita-blue); border-bottom: 3px solid var(--ita-gold); padding-bottom: 10px; margin-top: 40px;}
+        h2:first-child { margin-top: 0; }
+
+        /* Estilos da Tabela */
+        .table-container {
+            overflow-x: auto;
+            background: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 900px;
+            border: 2px solid #000;
+        }
+
+        th, td {
+            border: 1px solid #333;
+            text-align: center;
+            padding: 0; /* Zerado para o flexbox interno cuidar do espaçamento */
+            height: 35px; /* Altura padrão para as linhas */
+        }
+
+        th {
+            background-color: #d9d9d9;
+            color: #000;
+            font-size: 1em;
+            padding: 8px;
+        }
+
+        .horario-col {
+            background-color: #fff;
+            font-weight: bold;
+            width: 80px;
+            padding: 8px;
+        }
+
+        /* Divisor entre Matéria e Sala */
+        .aula-info {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            align-items: stretch;
+        }
+
+        .materia {
+            flex: 1;
+            padding: 8px 4px;
+            font-weight: bold;
+            font-size: 0.9em;
+            border-right: 1px solid rgba(0,0,0,0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sala {
+            flex: 1;
+            padding: 8px 4px;
+            font-size: 0.85em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .cpor-cell {
+            padding: 15px;
+            font-size: 1.1em;
+            letter-spacing: 1px;
+        }
+
+        /* Borda preta grossa separando a manhã da tarde */
+        tr.manha-fim td {
+            border-bottom: 4px solid #000;
+        }
+
+        /* Tabela de Professores */
+        .tabela-professores th { background-color: #d9d9d9; }
+        .tabela-professores td { padding: 8px; font-size: 0.95em; }
+        .color-box { width: 20px; height: 20px; display: inline-block; border: 1px solid #000; vertical-align: middle; }
+
+        footer { text-align: center; padding: 20px; background-color: var(--ita-blue); color: white; margin-top: 40px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Instituto_Tecnol%C3%B3gico_de_Aeron%C3%A1utica_-_Logo.svg/1200px-Instituto_Tecnol%C3%B3gico_de_Aeron%C3%A1utica_-_Logo.svg.png" alt="Logo do ITA">
+            <h1>T4 - Coçada T30</h1> 
+        </div>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="horarios.html" class="active">Horários</a>
+            <a href="materiais.html">Materiais</a>
+            <a href="avisos.html">Avisos</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Grade de Horários - Semanal</h2>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>HORÁRIO</th>
+                        <th>SEG</th>
+                        <th>TER</th>
+                        <th>QUA</th>
+                        <th>QUI</th>
+                        <th>SEX</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="horario-col">8:00</td>
+                        <td class="bg-ces"><div class="aula-info"><span class="materia">CES-10</span><span class="sala">F3-103</span></div></td>
+                        <td class="bg-qui"><div class="aula-info"><span class="materia">QUI-18</span><span class="sala">1506</span></div></td>
+                        <td class="bg-mat15"><div class="aula-info"><span class="materia">MAT-15</span><span class="sala">F2-107</span></div></td>
+                        <td class="bg-cpor cpor-cell" rowspan="4">CPOR</td>
+                        <td class="bg-ces"><div class="aula-info"><span class="materia">CES-10</span><span class="sala">F3-103</span></div></td>
+                    </tr>
+                    <tr>
+                        <td class="horario-col">9:00</td>
+                        <td class="bg-ces"><div class="aula-info"><span class="materia">CES-10</span><span class="sala">F3-103</span></div></td>
+                        <td class="bg-qui"><div class="aula-info"><span class="materia">QUI-18</span><span class="sala">1506</span></div></td>
+                        <td class="bg-mat15"><div class="aula-info"><span class="materia">MAT-15</span><span class="sala">F2-107</span></div></td>
+                        <td class="bg-ces"><div class="aula-info"><span class="materia">CES-10</span><span class="sala">F3-103</span></div></td>
+                    </tr>
+                    <tr>
+                        <td class="horario-col">10:10</td>
+                        <td class="bg-mtp"><div class="aula-info"><span class="materia">MTP-03</span><span class="sala">MOF</span></div></td>
+                        <td class="bg-mat17"><div class="aula-info"><span class="materia">MAT-17</span><span class="sala">F2-105</span></div></td>
+                        <td class="bg-fnd"><div class="aula-info"><span class="materia">FND-01</span><span class="sala">AUDITÓRIO</span></div></td>
+                        <td class="bg-mat13"><div class="aula-info"><span class="materia">MAT-13</span><span class="sala">F3-102</span></div></td>
+                    </tr>
+                    <tr class="manha-fim">
+                        <td class="horario-col">11:10</td>
+                        <td class="bg-mtp"><div class="aula-info"><span class="materia">MTP-03</span><span class="sala">MOF</span></div></td>
+                        <td class="bg-mat17"><div class="aula-info"><span class="materia">MAT-17</span><span class="sala">F2-105</span></div></td>
+                        <td class="bg-fnd"><div class="aula-info"><span class="materia">FND-01</span><span class="sala">AUDITÓRIO</span></div></td>
+                        <td class="bg-mat13"><div class="aula-info"><span class="materia">MAT-13</span><span class="sala">F3-102</span></div></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="horario-col">13:30</td>
+                        <td class="bg-hum"><div class="aula-info"><span class="materia">HUM-01</span><span class="sala">F2-105</span></div></td>
+                        <td class="bg-mat13"><div class="aula-info"><span class="materia">MAT-13</span><span class="sala">F3-102</span></div></td>
+                        <td class="bg-ces"><div class="aula-info"><span class="materia">CES-10 LAB</span><span class="sala">F3-103</span></div></td>
+                        <td class="bg-qui"><div class="aula-info"><span class="materia">QUI-18 LAB</span><span class="sala">LAB e 1506</span></div></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="horario-col">14:30</td>
+                        <td class="bg-hum"><div class="aula-info"><span class="materia">HUM-01</span><span class="sala">F2-105</span></div></td>
+                        <td class="bg-mat13"><div class="aula-info"><span class="materia">MAT-13</span><span class="sala">F3-102</span></div></td>
+                        <td class="bg-ces"><div class="aula-info"><span class="materia">CES-10 LAB</span><span class="sala">F3-103</span></div></td>
+                        <td class="bg-qui"><div class="aula-info"><span class="materia">QUI-18 LAB</span><span class="sala">LAB e 1506</span></div></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="horario-col">15:40</td>
+                        <td class="bg-hum"><div class="aula-info"><span class="materia">HUM-01</span><span class="sala">F2-105</span></div></td>
+                        <td></td>
+                        <td></td>
+                        <td class="bg-qui"><div class="aula-info"><span class="materia">QUI-18 LAB</span><span class="sala">LAB e 1506</span></div></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="horario-col">16:40</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Corpo Docente - Turma 4</h2>
+        <div class="table-container tabela-professores">
+            <table style="width: 100%; max-width: 600px; margin: 0 auto;">
+                <thead>
+                    <tr>
+                        <th style="width: 50px;">Cor</th>
+                        <th>Disciplina</th>
+                        <th>Professor(es)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><div class="color-box bg-mat13"></div></td>
+                        <td><strong>MAT-13</strong></td>
+                        <td>Renato</td>
+                    </tr>
+                    <tr>
+                        <td><div class="color-box bg-mat15"></div></td>
+                        <td><strong>MAT-15</strong></td>
+                        <td>Felipe</td>
+                    </tr>
+                    <tr>
+                        <td><div class="color-box bg-mat17"></div></td>
+                        <td><strong>MAT-17</strong></td>
+                        <td>Stylianos e Vanderley</td>
+                    </tr>
+                    <tr>
+                        <td><div class="color-box bg-ces"></div></td>
+                        <td><strong>CES-10 / CES-10 LAB</strong></td>
+                        <td>Armando</td>
+                    </tr>
+                    <tr>
+                        <td><div class="color-box bg-qui"></div></td>
+                        <td><strong>QUI-18</strong></td>
+                        <td>Douglas e Luiz Ferrão</td>
+                    </tr>
+                    <tr>
+                        <td><div class="color-box bg-qui"></div></td>
+                        <td><strong>QUI-18 LAB</strong></td>
+                        <td>Rene e Fritz</td>
+                    </tr>
+                    <tr>
+                        <td><div class="color-box bg-mtp"></div></td>
+                        <td><strong>MTP-03</strong></td>
+                        <td>Borille</td>
+                    </tr>
+                    <tr>
+                        <td><div class="color-box bg-hum"></div></td>
+                        <td><strong>HUM-01</strong></td>
+                        <td>Delmo</td>
+                    </tr>
+                    <tr>
+                        <td><div class="color-box bg-fnd"></div></td>
+                        <td><strong>FND-01</strong></td>
+                        <td>Cristiane</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Portal da Subturma 4 (T30) - Instituto Tecnológico de Aeronáutica</p>
+    </footer>
+
+</body>
+</html>
