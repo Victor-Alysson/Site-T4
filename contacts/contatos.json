@@ -1,17 +1,12 @@
 [
     {
-        "nome": "Prof. Dr. Engenheiro Silva",
-        "email": "silva@ita.br",
-        "telefone": "(12) 99999-0000"
-    },
-    {
-        "nome": "Profa. Maria Oliveira",
-        "email": "maria.oliveira@ita.br",
-        "telefone": "" 
-    },
-    {
-        "nome": "Coordenação T30",
+        "nome": "Lucas dos Santos (RD)",
         "email": "",
-        "telefone": "(12) 3947-0000"
+        "telefone": "(21) 96967-9662"
+    },
+    {
+        "nome": "Prof. Exemplo Silva",
+        "email": "exemplo.silva@ita.br",
+        "telefone": "(12) 99999-0000"
     }
 ]

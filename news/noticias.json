@@ -1,37 +1,23 @@
 [
     {
         "id": 1,
-        "data": "05/05/2026",
-        "titulo": "Repositório do FinCore",
-        "resumo": "O código base do projeto de organização financeira foi atualizado. Confira as novas rotas da API.",
-        "link": "https://github.com/seu-usuario/fincore"
+        "data": "04/05/2026",
+        "titulo": "Notícia de Teste 1",
+        "resumo": "Este é um resumo da notícia de teste 1. Ela contém informações importantes sobre o evento que ocorreu recentemente.",
+        "link": "#"
     },
     {
         "id": 2,
-        "data": "04/05/2026",
-        "titulo": "Aviso sobre o TAF",
-        "resumo": "Treino de corrida amanhã às 06:00 para quem vai fazer o TAF.",
-        "link": ""
+        "data": "10/06/2026",
+        "titulo": "Notícia de Teste 2",
+        "resumo": "Este é um resumo da notícia de teste 2. Ela aborda um assunto relevante para a comunidade e traz insights valiosos.",
+        "link": "#"
     },
     {
         "id": 3,
-        "data": "10/05/2026",
-        "titulo": "Aula melada de amanhã",
-        "resumo": "Aula de amanhã será na quadra, tragam roupas adequadas e disposição para se molhar!",
-        "link": "https://google.com"
-    },
-    {
-        "id": 4,
-        "data": "12/05/2026",
-        "titulo": "Reunião de planejamento",
-        "resumo": "Reunião para discutir o planejamento do próximo semestre. Todos os membros são convidados a participar.",
-        "link": ""
-    },
-    {
-        "id": 5,
-        "data": "15/05/2026",
-        "titulo": "Novo projeto de pesquisa",
-        "resumo": "Estamos iniciando um novo projeto de pesquisa sobre inteligência artificial. Interessados, entrem em contato para mais detalhes.",
-        "link": "https://google.com"
+        "data": "15/07/2026",
+        "titulo": "Notícia de Teste 3",
+        "resumo": "Este é um resumo da notícia de teste 3. Ela destaca um evento recente que teve um impacto significativo na sociedade.",
+        "link": "#"
     }
 ]
