@@ -7,7 +7,7 @@ async function carregarNoticias() {
         container.innerHTML = '';
 
         noticias.reverse().forEach(item => {
-            // Verifica se existe link e cria o elemento HTML
+           
             const linkHTML = item.link 
                 ? `<a href="${item.link}" target="_blank" class="link-externo">Acesse o conteúdo</a>` 
                 : '';

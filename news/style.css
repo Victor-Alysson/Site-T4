@@ -88,7 +88,7 @@ body {
     flex: 1;
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Alinhado ao topo para as notícias rolarem */
+    align-items: flex-start; 
     padding: 4rem 2rem;
     position: relative;
 }
@@ -170,9 +170,9 @@ body {
 
 .grid-noticias {
     display: grid;
-    grid-template-columns: 1fr; /* Força os blocos a ocuparem toda a largura, um embaixo do outro */
+    grid-template-columns: 1fr;
     gap: 1.5rem;
-    max-width: 900px; /* Reduzi um pouco a largura máxima para não ficar esticado demais em telas grandes */
+    max-width: 900px;
     margin: 0 auto;
 }
 
@@ -188,7 +188,7 @@ body {
 }
 
 .card-noticia:hover {
-    transform: translateX(5px); /* Efeito lateral sutil já que agora estão na vertical */
+    transform: translateX(5px); 
 }
 
 .data-noticia {

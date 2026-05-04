@@ -84,7 +84,7 @@ body {
     color: #A37C62;
 }
 
-/* --- CONTEÚDO DA PÁGINA --- */
+
 main {
     flex: 1;
     padding: 3rem 2rem;
@@ -102,25 +102,25 @@ main h2 {
     letter-spacing: 1px;
 }
 
-/* --- CONTAINER E TABELA --- */
+
 .table-container {
-    background: rgba(189, 189, 189, 0.5); /* Branco levemente transparente */
+    background: rgba(189, 189, 189, 0.5); 
     border-radius: 12px;
     padding: 1.5rem;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    overflow-x: auto; /* Garante que caiba no tablet/celular */
+    overflow-x: auto; 
     margin-bottom: 4rem;
 }
 
 table {
     width: 100%;
     border-collapse: separate;
-    border-spacing: 6px; /* Espaço entre as "peças" do quebra-cabeça */
+    border-spacing: 6px; 
     color: #333;
 }
 
 th {
-    background-color: #8B5E3C; /* Bronze escuro para os títulos */
+    background-color: #8B5E3C;
     color: #F8F9FA;
     padding: 15px;
     border-radius: 6px;
@@ -138,7 +138,7 @@ td {
 }
 
 td:hover {
-    transform: scale(1.02); /* Efeito sutil ao passar o mouse */
+    transform: scale(1.02); 
     filter: brightness(0.95);
 }
 
@@ -149,7 +149,7 @@ td:hover {
     min-width: 80px;
 }
 
-/* --- DESIGN DAS CÉLULAS DE AULA --- */
+
 .aula-info {
     display: flex;
     flex-direction: column;
@@ -168,23 +168,22 @@ td:hover {
     font-style: italic;
 }
 
-/* --- PALETA PASTEL (DESSATURADA E PROFISSIONAL) --- */
-.bg-ces { background-color: #B2DFDB; }   /* Computação - Verde Água */
-.bg-qui { background-color: #D1C4E9; }   /* Química - Lavanda */
-.bg-mat13 { background-color: #FFF9C4; } /* Cálculo - Amarelo Pastel */
-.bg-mat15 { background-color: #FFE0B2; } /* Álgebra - Laranja Pastel */
-.bg-mat17 { background-color: #FFCCBC; } /* Geometria - Pêssego */
-.bg-mtp { background-color: #CFD8DC; }   /* MTP - Cinza Azulado */
-.bg-hum { background-color: #F0F4C3; }   /* Humanidades - Lima */
-.bg-fnd { background-color: #DCEDC8; }   /* FND - Erva Doce */
+
+.bg-ces { background-color: #B2DFDB; }  
+.bg-qui { background-color: #D1C4E9; }   
+.bg-mat13 { background-color: #FFF9C4; } 
+.bg-mat15 { background-color: #FFE0B2; } 
+.bg-mat17 { background-color: #FFCCBC; } 
+.bg-hum { background-color: #F0F4C3; }  
+.bg-fnd { background-color: #DCEDC8; }  
 
 .bg-cpor { 
-    background-color: #C8E6C9; /* Verde Militar Pastel */
+    background-color: #C8E6C9; 
     color: #2E7D32;
     font-weight: 800;
 }
 
-/* --- TABELA DE PROFESSORES --- */
+
 .tabela-professores table {
     max-width: 700px;
     margin: 0 auto;
@@ -204,7 +203,6 @@ td:hover {
     border: 1px solid rgba(0,0,0,0.1);
 }
 
-/* --- RODAPÉ --- */
 footer {
     background-color: #1A1A1A;
     color: #F8F9FA;

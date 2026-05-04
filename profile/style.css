@@ -1,26 +1,25 @@
-/* --- RESET E VARIÁVEIS GLOBAIS --- */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; /*[cite: 2] */
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
 body {
-    background-color: #5C7A99; /* Azul ardósia[cite: 2] */
+    background-color: #5C7A99; 
     color: #F8F9FA;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
-/* --- CABEÇALHO (FAIXA BRONZE) --- */
 .cabecalho {
-    background-image: linear-gradient(35deg, #A37C62 0%, #8B5E3C 100%); /* Gradiente bronze[cite: 2] */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /*[cite: 2] */
+    background-image: linear-gradient(35deg, #A37C62 0%, #8B5E3C 100%); 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     padding: 1.2rem 2rem;
     position: relative;
-    z-index: 10; /* Garante que fique por cima da imagem de fundo[cite: 2] */
+    z-index: 10; 
 }
 
 .cabecalho-container {
@@ -28,13 +27,13 @@ body {
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start; /*[cite: 2] */
+    align-items: flex-start;
 }
 
 .logo-e-nav {
     display: flex;
     flex-direction: column;
-    gap: 0.8rem; /*[cite: 2] */
+    gap: 0.8rem;
 }
 
 .logo {
@@ -46,19 +45,19 @@ body {
     letter-spacing: 2px;
     font-family: 'Arial Black', Impact, sans-serif;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease; /*[cite: 2] */
+    transition: all 0.3s ease;
 }
 
 .logo:hover {
     color: #000000;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4); /*[cite: 2] */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
 }
 
-/* --- NAVEGAÇÃO E BOTÕES --- */
+
 .navegacao ul {
     list-style: none;
     display: flex;
-    gap: 0.8rem; /*[cite: 2] */
+    gap: 0.8rem;
 }
 
 .navegacao a, .btn-login {
@@ -67,27 +66,27 @@ body {
     border: 2px solid #1A1A1A;
     border-radius: 4px;
     transition: all 0.2s ease-in-out;
-    display: inline-block; /*[cite: 2] */
+    display: inline-block;
 }
 
 .navegacao a {
     font-weight: 600;
     font-size: 1rem;
-    padding: 0.4rem 0.8rem; /*[cite: 2] */
+    padding: 0.4rem 0.8rem;
 }
 
 .btn-login {
     font-weight: 700;
     font-size: 1.1rem;
-    padding: 0.6rem 1.5rem; /*[cite: 2] */
+    padding: 0.6rem 1.5rem;
 }
 
 .navegacao a:hover, .btn-login:hover {
     background-color: #1A1A1A;
-    color: #A37C62; /*[cite: 2] */
+    color: #A37C62;
 }
 
-/* --- ESTRUTURA PRINCIPAL E FUNDO --- */
+
 .conteudo-principal {
     flex: 1;
     display: flex;
@@ -95,51 +94,49 @@ body {
     align-items: flex-start;
     padding: 4rem 2rem;
     position: relative;
-    /* overflow: hidden;  <-- Remova ou comente esta linha para permitir o scroll da página */
+    
 }
 
 .conteudo-principal::before {
     content: "";
-    position: fixed; /* Alterado de absolute para fixed para travar a imagem */
+    position: fixed;
     top: 0; 
     left: 0; 
     width: 100%; 
     height: 100%;
     background: url('../assets/index/background-image.jpg') center/cover no-repeat;
-    opacity: 0.15; /* Mantém a transparência profissional */
-    z-index: -1;   /* Alterado para -1 para garantir que fique atrás de absolutamente tudo */
+    opacity: 0.15;
+    z-index: -1;   
 }
 
-/* --- HOME: MENSAGEM CENTRAL --- */
 .mensagem-central {
     position: relative;
     z-index: 1;
     color: #1A1A1A;
     text-align: center;
-    align-self: center; /* Centraliza verticalmente apenas na Home */
+    align-self: center; 
 }
 
 .mensagem-central h2 {
     font-size: 7rem;
     font-weight: 800;
-    margin-bottom: 1.5rem; /*[cite: 2] */
+    margin-bottom: 1.5rem;
 }
 
 .mensagem-central p {
     font-size: 5rem;
-    font-weight: 400; /*[cite: 2] */
+    font-weight: 400;
 }
 
-/* --- SEÇÕES DINÂMICAS (NEWS, CONTACTS, PERFIL) --- */
 .secao-noticias {
     width: 100%;
-    max-width: 900px; /* Layout vertical otimizado[cite: 2] */
+    max-width: 900px;
     background: rgba(46, 46, 46, 0.15);
     border: solid 1px rgba(255, 255, 255, 0.2);
     border-radius: 8px;
     padding: 2rem;
     z-index: 1;
-    position: relative; /*[cite: 2] */
+    position: relative;
 }
 
 .titulo-secao {
@@ -147,40 +144,39 @@ body {
     margin-bottom: 2rem;
     font-size: 2.5rem;
     text-transform: uppercase;
-    text-align: center; /*[cite: 2] */
+    text-align: center;
 }
 
 .grid-noticias {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem; /* Layout vertical (um embaixo do outro)[cite: 2] */
+    gap: 1.5rem; 
 }
 
-/* --- CARDS (NOTÍCIAS, CONTATOS, ALUNOS) --- */
 .card-noticia {
     background: #ffffff;
     padding: 2rem;
     border-radius: 8px;
-    border-left: 8px solid #A37C62; /* Borda bronze característica[cite: 2] */
+    border-left: 8px solid #A37C62;
     color: #1A1A1A;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.2s ease; /*[cite: 2] */
+    transition: transform 0.2s ease;
 }
 
 .card-noticia:hover {
-    transform: translateX(8px); /* Efeito lateral no hover[cite: 2] */
+    transform: translateX(8px);
 }
 
 .card-noticia h3 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
-    color: #1A1A1A; /*[cite: 2] */
+    color: #1A1A1A;
 }
 
 .card-noticia p {
     font-size: 1.1rem;
     line-height: 1.6;
-    color: #333; /*[cite: 2] */
+    color: #333;
 }
 
 .data-noticia {
@@ -188,7 +184,7 @@ body {
     color: #8B5E3C;
     font-weight: 700;
     display: block;
-    margin-bottom: 0.5rem; /*[cite: 2] */
+    margin-bottom: 0.5rem;
 }
 
 /* --- ESTILOS DE CONTATO ESPECÍFICOS --- */
@@ -196,19 +192,19 @@ body {
     font-size: 1.1rem;
     margin: 0.5rem 0;
     display: flex;
-    gap: 0.5rem; /*[cite: 2] */
+    gap: 0.5rem;
 }
 
-.info-linha strong { color: #8B5E3C; } /*[cite: 2] */
+.info-linha strong { color: #8B5E3C; }
 
 .info-linha a {
     color: #5C7A99;
-    text-decoration: none; /*[cite: 2] */
+    text-decoration: none;
 }
 
-.info-linha a:hover { text-decoration: underline; } /*[cite: 2] */
+.info-linha a:hover { text-decoration: underline; }
 
-/* --- BOTÃO DE LINK NAS NOTÍCIAS --- */
+
 .link-externo {
     display: inline-block;
     margin-top: 1.2rem;

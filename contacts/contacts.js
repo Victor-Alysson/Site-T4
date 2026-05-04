@@ -7,7 +7,7 @@ async function carregarContatos() {
         container.innerHTML = '';
 
         contatos.forEach(item => {
-            // Lógica condicional: só cria a tag se o dado existir
+            
             const emailHTML = item.email 
                 ? `<p class="info-contato"><strong>Email:</strong> <a href="mailto:${item.email}">${item.email}</a></p>` 
                 : '';
