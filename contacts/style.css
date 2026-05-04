@@ -160,3 +160,12 @@ body {
 }
 
 .info-linha a:hover { text-decoration: underline; }
+
+footer {
+    background-color: #1A1A1A;
+    color: #F8F9FA;
+    text-align: center;
+    padding: 2rem;
+    margin-top: auto;
+    border-top: 5px solid #A37C62;
+}
