@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Faltas | Turma 4</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="cabecalho">
+        <div class="cabecalho-container">
+            <div class="logo-e-nav">
+                <a href="index.html" class="logo">Turma 4 - T30</a>
+                <nav class="navegacao">
+                    <ul>
+                        <li><a href="horarios.html">Horários</a></li>
+                        <li><a href="calculadora.html">Calculadora de Faltas</a></li>
+                        <li><a href="index.html#noticias">Notícias</a></li>
+                        <li><a href="index.html#contatos">Contatos</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="login-container">
+                <a href="#login" class="btn-login">Login</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="conteudo-principal-faltas">
+        <h2>Calculadora de Faltas</h2>
+        
+        <div class="form-container">
+            <div class="input-group">
+                <label for="materia-calc">1. Selecione a Disciplina:</label>
+                <select id="materia-calc">
+                    <option value="">Selecione...</option>
+                    <option value="MAT-13">MAT-13</option>
+                    <option value="MAT-15">MAT-15</option>
+                    <option value="MAT-17">MAT-17</option>
+                    <option value="CES-10">CES-10</option>
+                    <option value="QUI-18">QUI-18</option>
+                    <option value="MTP-03">MTP-03</option>
+                    <option value="HUM-01">HUM-01</option>
+                    <option value="FND-01">FND-01</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="faltas-atuais">2. Quantas faltas você já tem?</label>
+                <input type="number" id="faltas-atuais" min="0" step="1" value="0" disabled onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+            </div>
+        </div>
+
+        <div id="painel-resultado" class="resultado-container oculto">
+            <div class="info-geral">
+                <p>Limite máximo permitido: <strong id="limite-exibido">0</strong> faltas</p>
+            </div>
+            
+            <div id="status-box" class="status-box">
+                <h3 id="texto-restante">Carregando...</h3>
+                <p id="mensagem-status">--</p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // 👇👇👇 COLOQUE AQUI O NÚMERO LIMITE DE FALTAS DE CADA MATÉRIA 👇👇👇
+        const limiteFaltasPorMateria = {
+            "MAT-13": 10,   // Exemplo: Limite de 9 faltas
+            "MAT-15": 5,
+            "MAT-17": 5,
+            "CES-10": 15,
+            "QUI-18": 12,
+            "MTP-03": 5,
+            "HUM-01": 8,
+            "FND-01": 5
+        };
+
+        const selectMateria = document.getElementById('materia-calc');
+        const inputFaltas = document.getElementById('faltas-atuais');
+        const painelResultado = document.getElementById('painel-resultado');
+        const txtLimiteExibido = document.getElementById('limite-exibido');
+        const statusBox = document.getElementById('status-box');
+        const textoRestante = document.getElementById('texto-restante');
+        const mensagemStatus = document.getElementById('mensagem-status');
+
+        function calcularFaltas() {
+            const materia = selectMateria.value;
+            const faltasAtuais = parseInt(inputFaltas.value) || 0;
+
+            if (materia === "") {
+                painelResultado.classList.add('oculto');
+                inputFaltas.disabled = true;
+                return;
+            }
+
+            inputFaltas.disabled = false;
+            painelResultado.classList.remove('oculto');
+
+            const limiteMaximo = limiteFaltasPorMateria[materia];
+            const faltasRestantes = limiteMaximo - faltasAtuais;
+
+            txtLimiteExibido.textContent = limiteMaximo;
+
+            // Reset de cores
+            statusBox.classList.remove('status-verde', 'status-amarelo', 'status-vermelho');
+
+            if (faltasRestantes > 2) {
+                statusBox.classList.add('status-verde');
+                textoRestante.textContent = `Ainda pode faltar ${faltasRestantes} vezes.`;
+                mensagemStatus.textContent = "Situação sob controle.";
+            } else if (faltasRestantes > 0) {
+                statusBox.classList.add('status-amarelo');
+                textoRestante.textContent = `Atenção! Restam apenas ${faltasRestantes} faltas.`;
+                mensagemStatus.textContent = "Estás quase no limite!";
+            } else if (faltasRestantes === 0) {
+                statusBox.classList.add('status-vermelho');
+                textoRestante.textContent = `Limite atingido!`;
+                mensagemStatus.textContent = "Não pode faltar mais nenhuma aula.";
+            } else {
+                statusBox.classList.add('status-vermelho');
+                textoRestante.textContent = `Estourou as faltas!`;
+                mensagemStatus.textContent = `Excedeu o limite em ${Math.abs(faltasRestantes)} falta(s).`;
+            }
+        }
+
+        selectMateria.addEventListener('change', calcularFaltas);
+        // Monitora o campo de faltas e filtra qualquer entrada inválida
+        inputFaltas.addEventListener('input', function() {
+            // Tenta converter o que foi digitado para um número inteiro
+            let valor = parseInt(this.value);
+            
+            // Se for texto (NaN), vazio, ou menor que zero, força a ser 0
+            if (isNaN(valor) || valor < 0) {
+                this.value = 0;
+            } else {
+                // Atualiza a caixa de texto (isso remove decimais se o usuário tentou colar "1.5")
+                this.value = valor; 
+            }
+            
+            // Chama a função de calcular para atualizar as cores e a mensagem
+            calcularFaltas();
+        });
+    </script>
+</body>
+</html>
