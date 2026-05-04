@@ -48,7 +48,7 @@
 
             <div class="input-group">
                 <label for="faltas-atuais">2. Quantas faltas você já tem?</label>
-                <input type="number" id="faltas-atuais" min="0" value="0" disabled>
+                <input type="number" id="faltas-atuais" min="0" step="1" value="0" disabled onkeypress="return event.charCode >= 48 && event.charCode <= 57">
             </div>
         </div>
 
@@ -126,7 +126,22 @@
         }
 
         selectMateria.addEventListener('change', calcularFaltas);
-        inputFaltas.addEventListener('input', calcularFaltas);
+        // Monitora o campo de faltas e filtra qualquer entrada inválida
+        inputFaltas.addEventListener('input', function() {
+            // Tenta converter o que foi digitado para um número inteiro
+            let valor = parseInt(this.value);
+            
+            // Se for texto (NaN), vazio, ou menor que zero, força a ser 0
+            if (isNaN(valor) || valor < 0) {
+                this.value = 0;
+            } else {
+                // Atualiza a caixa de texto (isso remove decimais se o usuário tentou colar "1.5")
+                this.value = valor; 
+            }
+            
+            // Chama a função de calcular para atualizar as cores e a mensagem
+            calcularFaltas();
+        });
     </script>
 </body>
 </html>
