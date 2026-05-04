@@ -19,5 +19,19 @@
         "titulo": "Aula melada de amanhã",
         "resumo": "Aula de amanhã será na quadra, tragam roupas adequadas e disposição para se molhar!",
         "link": "https://google.com"
+    },
+    {
+        "id": 4,
+        "data": "12/05/2026",
+        "titulo": "Reunião de planejamento",
+        "resumo": "Reunião para discutir o planejamento do próximo semestre. Todos os membros são convidados a participar.",
+        "link": ""
+    },
+    {
+        "id": 5,
+        "data": "15/05/2026",
+        "titulo": "Novo projeto de pesquisa",
+        "resumo": "Estamos iniciando um novo projeto de pesquisa sobre inteligência artificial. Interessados, entrem em contato para mais detalhes.",
+        "link": "https://google.com"
     }
 ]
