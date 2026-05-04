@@ -5,8 +5,18 @@
         "telefone": "(21) 96967-9662"
     },
     {
-        "nome": "Prof. Exemplo Silva",
-        "email": "exemplo.silva@ita.br",
-        "telefone": "(12) 99999-0000"
+        "nome": "Prof. Rene",
+        "email": "renefbg@ita.br",
+        "telefone": ""
+    },
+    {
+        "nome": "Prof. Ferrão",
+        "email": "ferrao@ita.br",
+        "telefone": ""
+    },
+    {
+        "nome": "Prof. Stylianos",
+        "email": "stylianos.dimas@gp.ita.br",
+        "telefone": ""
     }
 ]
