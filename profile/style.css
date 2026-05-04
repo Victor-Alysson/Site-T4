@@ -1,0 +1,233 @@
+/* --- RESET E VARIÁVEIS GLOBAIS --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; /*[cite: 2] */
+}
+
+body {
+    background-color: #5C7A99; /* Azul ardósia[cite: 2] */
+    color: #F8F9FA;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- CABEÇALHO (FAIXA BRONZE) --- */
+.cabecalho {
+    background-image: linear-gradient(35deg, #A37C62 0%, #8B5E3C 100%); /* Gradiente bronze[cite: 2] */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /*[cite: 2] */
+    padding: 1.2rem 2rem;
+    position: relative;
+    z-index: 10; /* Garante que fique por cima da imagem de fundo[cite: 2] */
+}
+
+.cabecalho-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /*[cite: 2] */
+}
+
+.logo-e-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem; /*[cite: 2] */
+}
+
+.logo {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #1A1A1A;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Arial Black', Impact, sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease; /*[cite: 2] */
+}
+
+.logo:hover {
+    color: #000000;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4); /*[cite: 2] */
+}
+
+/* --- NAVEGAÇÃO E BOTÕES --- */
+.navegacao ul {
+    list-style: none;
+    display: flex;
+    gap: 0.8rem; /*[cite: 2] */
+}
+
+.navegacao a, .btn-login {
+    text-decoration: none;
+    color: #1A1A1A;
+    border: 2px solid #1A1A1A;
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+    display: inline-block; /*[cite: 2] */
+}
+
+.navegacao a {
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem; /*[cite: 2] */
+}
+
+.btn-login {
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 0.6rem 1.5rem; /*[cite: 2] */
+}
+
+.navegacao a:hover, .btn-login:hover {
+    background-color: #1A1A1A;
+    color: #A37C62; /*[cite: 2] */
+}
+
+/* --- ESTRUTURA PRINCIPAL E FUNDO --- */
+.conteudo-principal {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden; /*[cite: 2] */
+}
+
+.conteudo-principal::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: url('../assets/index/background-image.jpg') center/cover no-repeat;
+    opacity: 0.15; /* Imagem semi-transparente[cite: 2] */
+    z-index: 0;
+}
+
+/* --- HOME: MENSAGEM CENTRAL --- */
+.mensagem-central {
+    position: relative;
+    z-index: 1;
+    color: #1A1A1A;
+    text-align: center;
+    align-self: center; /* Centraliza verticalmente apenas na Home */
+}
+
+.mensagem-central h2 {
+    font-size: 7rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem; /*[cite: 2] */
+}
+
+.mensagem-central p {
+    font-size: 5rem;
+    font-weight: 400; /*[cite: 2] */
+}
+
+/* --- SEÇÕES DINÂMICAS (NEWS, CONTACTS, PERFIL) --- */
+.secao-noticias {
+    width: 100%;
+    max-width: 900px; /* Layout vertical otimizado[cite: 2] */
+    background: rgba(46, 46, 46, 0.15);
+    border: solid 1px rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 2rem;
+    z-index: 1;
+    position: relative; /*[cite: 2] */
+}
+
+.titulo-secao {
+    color: #1A1A1A;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    text-align: center; /*[cite: 2] */
+}
+
+.grid-noticias {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Layout vertical (um embaixo do outro)[cite: 2] */
+}
+
+/* --- CARDS (NOTÍCIAS, CONTATOS, ALUNOS) --- */
+.card-noticia {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    border-left: 8px solid #A37C62; /* Borda bronze característica[cite: 2] */
+    color: #1A1A1A;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease; /*[cite: 2] */
+}
+
+.card-noticia:hover {
+    transform: translateX(8px); /* Efeito lateral no hover[cite: 2] */
+}
+
+.card-noticia h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #1A1A1A; /*[cite: 2] */
+}
+
+.card-noticia p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333; /*[cite: 2] */
+}
+
+.data-noticia {
+    font-size: 0.9rem;
+    color: #8B5E3C;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 0.5rem; /*[cite: 2] */
+}
+
+/* --- ESTILOS DE CONTATO ESPECÍFICOS --- */
+.info-linha {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+    display: flex;
+    gap: 0.5rem; /*[cite: 2] */
+}
+
+.info-linha strong { color: #8B5E3C; } /*[cite: 2] */
+
+.info-linha a {
+    color: #5C7A99;
+    text-decoration: none; /*[cite: 2] */
+}
+
+.info-linha a:hover { text-decoration: underline; } /*[cite: 2] */
+
+/* --- BOTÃO DE LINK NAS NOTÍCIAS --- */
+.link-externo {
+    display: inline-block;
+    margin-top: 1.2rem;
+    padding: 0.5rem 1rem;
+    background-color: #5C7A99;
+    color: #F8F9FA !important;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 4px;
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+    .cabecalho-container, .logo-e-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    .cabecalho-container { gap: 1.5rem; }
+    .navegacao ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .mensagem-central h2 { font-size: 2.5rem; }
+    .mensagem-central p { font-size: 1.8rem; }
+}

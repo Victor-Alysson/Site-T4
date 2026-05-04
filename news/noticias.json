@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "data": "05/05/2026",
+        "titulo": "Repositório do FinCore",
+        "resumo": "O código base do projeto de organização financeira foi atualizado. Confira as novas rotas da API.",
+        "link": "https://github.com/seu-usuario/fincore"
+    },
+    {
+        "id": 2,
+        "data": "04/05/2026",
+        "titulo": "Aviso sobre o TAF",
+        "resumo": "Treino de corrida amanhã às 06:00 para quem vai fazer o TAF.",
+        "link": ""
+    },
+    {
+        "id": 3,
+        "data": "10/05/2026",
+        "titulo": "Aula melada de amanhã",
+        "resumo": "Aula de amanhã será na quadra, tragam roupas adequadas e disposição para se molhar!",
+        "link": "https://google.com"
+    }
+]

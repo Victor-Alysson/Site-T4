@@ -1,0 +1,17 @@
+[
+    {
+        "nome": "Prof. Dr. Engenheiro Silva",
+        "email": "silva@ita.br",
+        "telefone": "(12) 99999-0000"
+    },
+    {
+        "nome": "Profa. Maria Oliveira",
+        "email": "maria.oliveira@ita.br",
+        "telefone": "" 
+    },
+    {
+        "nome": "Coordenação T30",
+        "email": "",
+        "telefone": "(12) 3947-0000"
+    }
+]
